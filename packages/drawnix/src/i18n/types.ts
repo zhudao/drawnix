@@ -68,8 +68,16 @@ export interface Translations {
   'general.undo': string;
   'general.redo': string;
   'general.menu': string;
+  'general.moreOptions': string;
   'general.duplicate': string;
   'general.delete': string;
+  'general.copyToClipboard': string;
+  'general.copyToClipboard.svg': string;
+  'general.copyToClipboard.png': string;
+  'general.copyToClipboard.transparent': string;
+  'toast.copyToClipboard.svg': string;
+  'toast.copyToClipboard.png': string;
+  'toast.copyToClipboard.mode.transparent': string;
 
   // Language
   'language.switcher': string;
@@ -82,6 +90,7 @@ export interface Translations {
   // Menu items
   'menu.open': string;
   'menu.saveFile': string;
+  'menu.saveAsFile': string;
   'menu.exportImage': string;
   'menu.exportImage.svg': string;
   'menu.exportImage.png': string;
@@ -122,6 +131,7 @@ export interface Translations {
 
   // Tool popup items
   'popupToolbar.fillColor': string;
+  'popupToolbar.fontSize': string;
   'popupToolbar.fontColor': string;
   'popupToolbar.link': string;
   'popupToolbar.stroke': string;
@@ -172,4 +182,6 @@ export interface I18nContextType {
 export interface I18nProviderProps {
   children: ReactNode;
   defaultLanguage?: Language;
+  initialLanguage?: Language;
+  onLanguageChange?: (language: Language) => void;
 }

@@ -1,8 +1,7 @@
-@import "open-color/open-color.scss";
-@import "./variables.module.scss";
+@use './variables.scss' as *;
 
 .drawnix {
-  --focus-highlight-color: #{$oc-blue-2};
+  --focus-highlight-color: #a5d8ff;
   --icon-fill-color: var(--color-on-surface);
   --island-bg-color: #ffffff;
   --island-border-color: #eeeeee;
@@ -17,7 +16,7 @@
   --lg-button-size: 2.25rem;
   --lg-icon-size: 1.125rem;
   --xlg-icon-size: 1.25rem;
-  --popup-label-size: 1.25rem;
+  --popup-label-size: 1.125rem;
   --editor-container-padding: 1rem;
 
   @media screen and (min-device-width: 1921px) {
@@ -28,9 +27,19 @@
   }
 
   --space-factor: 0.25rem;
+  --dx-space-1: 4px;
+  --dx-space-2: 8px;
+  --dx-space-3: 12px;
+  --dx-space-4: 16px;
+  --dx-space-5: 24px;
+  --dx-radius-1: 3px;
+  --dx-radius-2: 4px;
+  --dx-radius-3: 6px;
+  --dx-radius-4: 8px;
+  --dx-radius-full: 9999px;
   --text-primary-color: var(--color-on-surface);
 
-  --color-icon-white: #{$oc-white};
+  --color-icon-white: #ffffff;
 
   --color-primary: #6698ff;
   --color-primary-darker: #4a7ee6;    // 降低亮度和饱和度

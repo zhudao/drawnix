@@ -7,6 +7,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '../../popover/popover';
 import { ArrowLineHandle } from '@plait/draw';
 import { ArrowMarkerPicker } from '../../arrow-mark-picker';
 import { useI18n } from '../../../i18n';
+import type { Translations } from '../../../i18n';
 
 export type ArrowMarkButtonProps = {
   board: PlaitBoard;
@@ -15,16 +16,17 @@ export type ArrowMarkButtonProps = {
   end: 'source' | 'target';
 };
 
-export const ArrowMarkButton: React.FC<ArrowMarkButtonProps> = ({
-  board,
-  end,
-  endProperty,
-}) => {
+export const ArrowMarkButton: React.FC<ArrowMarkButtonProps> = ({ board, end, endProperty }) => {
   const [isPopoverOpen, setIsPopoverrOpen] = useState(false);
-  const marker = endProperty?.marker;
   const container = PlaitBoard.getBoardContainer(board);
   const { t } = useI18n();
-  const title = `${t(`line.${end}`)} — ${t(`line.${marker}`)}`;
+  if (!endProperty) {
+    return null;
+  }
+  const marker = endProperty.marker ?? 'none';
+  const endLabelKey: keyof Translations = end === 'source' ? 'line.source' : 'line.target';
+  const markerLabelKey: keyof Translations = marker === 'none' ? 'line.none' : 'line.arrow';
+  const title = `${t(endLabelKey)} — ${t(markerLabelKey)}`;
 
   return (
     <Popover

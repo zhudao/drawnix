@@ -3,26 +3,11 @@ import { Check, NoColorIcon } from './icons';
 import Stack from '../components/stack';
 import './color-picker.scss';
 import { splitRows } from '../utils/common';
-import {
-  hexAlphaToOpacity,
-  isDefaultStroke,
-  isNoColor,
-  removeHexAlpha,
-} from '../utils/color';
+import { hexAlphaToOpacity, isDefaultStroke, isNoColor, removeHexAlpha } from '../utils/color';
 import React from 'react';
 import { SizeSlider } from './size-slider';
-import {
-  DEFAULT_COLOR,
-  isNullOrUndefined,
-  MERGING,
-  PlaitHistoryBoard,
-} from '@plait/core';
-import {
-  CLASSIC_COLORS,
-  NO_COLOR,
-  TRANSPARENT,
-  WHITE,
-} from '../constants/color';
+import { DEFAULT_COLOR, isNullOrUndefined, MERGING, PlaitHistoryBoard } from '@plait/core';
+import { CLASSIC_COLORS, NO_COLOR, TRANSPARENT, WHITE } from '../constants/color';
 import { useBoard } from '@plait-board/react-board';
 import { Translations, useI18n } from '../i18n';
 
@@ -32,15 +17,15 @@ export type ColorPickerProps = {
   onColorChange: (color: string) => void;
   onOpacityChange: (opacity: number) => void;
   currentColor?: string;
+  hideOpacitySlider?: boolean;
 };
 
-export const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
+export const ColorPicker = React.forwardRef((props: ColorPickerProps, _ref) => {
   const board = useBoard();
   const { t } = useI18n();
-  const { currentColor, onColorChange, onOpacityChange } = props;
+  const { currentColor, onColorChange, onOpacityChange, hideOpacitySlider = false } = props;
   const [selectedColor, setSelectedColor] = useState(
-    (currentColor && removeHexAlpha(currentColor)) ||
-      ROWS_CLASSIC_COLORS[0][0].value
+    (currentColor && removeHexAlpha(currentColor)) || ROWS_CLASSIC_COLORS[0][0].value
   );
   const [opacity, setOpacity] = useState(() => {
     const _opacity = currentColor && hexAlphaToOpacity(currentColor);
@@ -48,6 +33,7 @@ export const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
   });
   return (
     <Stack.Col gap={3}>
+      {!hideOpacitySlider && (
         <SizeSlider
           title={t('popupToolbar.opacity')}
           step={5}
@@ -65,42 +51,39 @@ export const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
           }}
           disabled={selectedColor === CLASSIC_COLORS[0]['value']}
         ></SizeSlider>
-        <Stack.Col gap={2}>
-          {ROWS_CLASSIC_COLORS.map((colors, index) => (
-            <Stack.Row key={index} gap={2}>
-              {colors.map((color) => {
-                return (
-                  <button
-                    key={color.value}
-                    className={`color-select-item ${
-                      selectedColor === color.value ? 'active' : ''
-                    } ${isNoColor(color.value) ? 'no-color' : ''}`}
-                    style={{
-                      backgroundColor: isNoColor(color.value)
-                        ? TRANSPARENT
-                        : color.value,
-                      color: isDefaultStroke(color.value)
-                        ? WHITE
-                        : DEFAULT_COLOR,
-                    }}
-                    onClick={() => {
-                      setSelectedColor(color.value);
-                      if (color.value === NO_COLOR) {
-                        setOpacity(100);
-                      }
-                      onColorChange(color.value);
-                    }}
-                    title={t((color.name || 'color.unknown') as keyof Translations)}
-                    aria-label={t((color.name || 'color.unknown') as keyof Translations)}
-                  >
-                    {isNoColor(color.value) && NoColorIcon}
-                    {selectedColor === color.value && Check}
-                  </button>
-                );
-              })}
-            </Stack.Row>
-          ))}
-        </Stack.Col>
+      )}
+      <Stack.Col gap={2}>
+        {ROWS_CLASSIC_COLORS.map((colors, index) => (
+          <Stack.Row key={index} gap={2}>
+            {colors.map((color) => {
+              return (
+                <button
+                  key={color.value}
+                  className={`color-select-item ${
+                    selectedColor === color.value ? 'active' : ''
+                  } ${isNoColor(color.value) ? 'no-color' : ''}`}
+                  style={{
+                    backgroundColor: isNoColor(color.value) ? TRANSPARENT : color.value,
+                    color: isDefaultStroke(color.value) ? WHITE : DEFAULT_COLOR,
+                  }}
+                  onClick={() => {
+                    setSelectedColor(color.value);
+                    if (color.value === NO_COLOR) {
+                      setOpacity(100);
+                    }
+                    onColorChange(color.value);
+                  }}
+                  title={t((color.name || 'color.unknown') as keyof Translations)}
+                  aria-label={t((color.name || 'color.unknown') as keyof Translations)}
+                >
+                  {isNoColor(color.value) && NoColorIcon}
+                  {selectedColor === color.value && Check}
+                </button>
+              );
+            })}
+          </Stack.Row>
+        ))}
       </Stack.Col>
+    </Stack.Col>
   );
 });

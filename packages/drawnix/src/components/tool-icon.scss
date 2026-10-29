@@ -1,5 +1,4 @@
-@import "open-color/open-color.scss";
-@import "../styles/variables.module.scss";
+@use '../styles/variables.scss' as *;
 
 .drawnix {
   .tool-icon {

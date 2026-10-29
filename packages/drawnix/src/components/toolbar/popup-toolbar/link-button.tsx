@@ -14,16 +14,18 @@ export type PopupLinkButtonProps = {
   title: string;
 };
 
-export const PopupLinkButton: React.FC<PopupLinkButtonProps> = ({
-  board,
-  title,
-}) => {
+export const PopupLinkButton: React.FC<PopupLinkButtonProps> = ({ board, title }) => {
   const { t } = useI18n();
   const { appState, setAppState } = useDrawnix();
   return (
     <ToolButton
       className={classNames(`property-button`)}
       visible={true}
+      selected={
+        appState.linkState?.isEditing ||
+        appState.linkState?.isHovering ||
+        appState.linkState?.isHoveringOrigin
+      }
       icon={LinkIcon}
       type="button"
       title={title}

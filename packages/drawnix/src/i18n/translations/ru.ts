@@ -33,7 +33,7 @@ const ruTranslations: Translations = {
   'zoom.out': 'Уменьшить — Cmd+-',
   'zoom.fit': 'По размеру экрана',
   'zoom.100': 'Сбросить к 100%',
-  
+
   // Themes
   'theme.default': 'Стандартная',
   'theme.colorful': 'Красочная',
@@ -64,9 +64,17 @@ const ruTranslations: Translations = {
   'general.undo': 'Отменить',
   'general.redo': 'Вернуть',
   'general.menu': 'Меню приложения',
+  'general.moreOptions': 'Дополнительно',
   'general.duplicate': 'Дублировать',
   'general.delete': 'Удалить',
-  
+
+  'general.copyToClipboard': 'Копировать в буфер обмена',
+  'general.copyToClipboard.svg': 'SVG',
+  'general.copyToClipboard.png': 'PNG',
+  'general.copyToClipboard.transparent': 'Прозрачный фон',
+  'toast.copyToClipboard.svg': 'Выбранные элементы скопированы в буфер обмена как SVG',
+  'toast.copyToClipboard.png': 'Выбранные элементы скопированы в буфер обмена как PNG',
+  'toast.copyToClipboard.mode.transparent': '(Прозрачный фон)',
   // Language
   'language.switcher': 'Language',
   'language.chinese': '中文',
@@ -74,47 +82,44 @@ const ruTranslations: Translations = {
   'language.russian': 'Русский',
   'language.arabic': 'عربي',
   'language.vietnamese': 'Tiếng Việt',
-  
+
   // Menu items
   'menu.open': 'Открыть',
-  'menu.saveFile': 'Сохранить',
+  'menu.saveFile': 'Сохранить в текущий файл',
+  'menu.saveAsFile': 'Сохранить как',
   'menu.exportImage': 'Экспортировать',
   'menu.exportImage.svg': 'SVG',
   'menu.exportImage.png': 'PNG',
   'menu.exportImage.jpg': 'JPG',
   'menu.cleanBoard': 'Очистить доску',
   'menu.github': 'GitHub',
-  
+
   // Dialog translations
   'dialog.mermaid.title': 'Mermaid в Drawnix',
   'dialog.mermaid.description': 'Поддерживаются',
   'dialog.mermaid.flowchart': 'блок-схемы',
-  'dialog.mermaid.sequence': 'диаграммы последовательностей', 
+  'dialog.mermaid.sequence': 'диаграммы последовательностей',
   'dialog.mermaid.class': 'диаграммы классов',
-  'dialog.mermaid.otherTypes':
-    ' и другие диаграммы (преобразуются в изображения).',
+  'dialog.mermaid.otherTypes': ' и другие диаграммы (преобразуются в изображения).',
   'dialog.mermaid.syntax': 'Синтаксис Mermaid',
-  'dialog.mermaid.placeholder':
-    'Введите сюда описание вашей Mermaid-диаграммы…',
+  'dialog.mermaid.placeholder': 'Введите сюда описание вашей Mermaid-диаграммы…',
   'dialog.mermaid.preview': 'Предпросмотр',
   'dialog.mermaid.insert': 'Вставить',
   'dialog.markdown.description':
     'Поддерживается автоматическое преобразование синтаксиса Markdown в mind-карты.',
   'dialog.markdown.syntax': 'Синтаксис Markdown',
-  'dialog.markdown.placeholder':
-    'Введите сюда описание вашего текста Markdown…',
+  'dialog.markdown.placeholder': 'Введите сюда описание вашего текста Markdown…',
   'dialog.markdown.preview': 'Предпросмотр',
   'dialog.markdown.insert': 'Вставить',
   'dialog.error.loadMermaid': 'Не удалось загрузить библотеку Mermaid',
-  
+
   // Extra tools menu items
   'extraTools.mermaidToDrawnix': 'Mermaid в Drawnix',
   'extraTools.markdownToDrawnix': 'Markdown в Drawnix',
 
   // Clean confirm dialog
   'cleanConfirm.title': 'Очистить доску',
-  'cleanConfirm.description':
-    'Это удалит всё содержимое доски. Вы хотите продолжить?',
+  'cleanConfirm.description': 'Это удалит всё содержимое доски. Вы хотите продолжить?',
   'cleanConfirm.cancel': 'Отмена',
   'cleanConfirm.ok': 'ОК',
 
@@ -123,11 +128,12 @@ const ruTranslations: Translations = {
 
   // Tool popup items
   'popupToolbar.fillColor': 'Цвет заливки',
+  'popupToolbar.fontSize': 'Размер шрифта',
   'popupToolbar.fontColor': 'Цвет текста',
   'popupToolbar.link': 'Вставить ссылку',
   'popupToolbar.stroke': 'Контур',
   'popupToolbar.opacity': 'Прозрачность',
-  
+
   // Text placeholders
   'textPlaceholders.link': 'Ссылка',
   'textPlaceholders.text': 'Текст',
@@ -157,7 +163,7 @@ const ruTranslations: Translations = {
   - What can run 🐞 🚀
     - then do not touch it 🛑 ✋
       - 👾 💥 🏹 🎯
-    
+
   ## Boy or girl 👶 ❓ 🤷 ♂️ ♀️
 
   ### Hello world 👋 🌍 ✨ 💻
@@ -167,11 +173,11 @@ const ruTranslations: Translations = {
   // Draw elements text
   'draw.lineText': 'Текст',
   'draw.geometryText': 'Текст',
-  
+
   // Mind map elements text
   'mind.centralText': 'Центральная тема',
   'mind.abstractNodeText': 'Резюме',
-  
+
   'tutorial.title': 'Drawnix',
   'tutorial.description':
     'Универсальная доска: майнд-карты, блок-схемы, свободное рисование и многое другое',

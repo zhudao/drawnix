@@ -21,7 +21,7 @@ const zhTranslations: Translations = {
   'toolbar.shape.rectangle': '长方形 — R',
   'toolbar.shape.ellipse': '圆 — O',
   'toolbar.shape.triangle': '三角形',
-  'toolbar.shape.terminal': '椭圆角矩形',
+  'toolbar.shape.terminal': '开始/结束',
   'toolbar.shape.noteCurlyLeft': '左花括注释',
   'toolbar.shape.noteCurlyRight': '右花括注释',
   'toolbar.shape.diamond': '菱形',
@@ -64,8 +64,17 @@ const zhTranslations: Translations = {
   'general.undo': '撤销',
   'general.redo': '重做',
   'general.menu': '应用菜单',
-  'general.duplicate': '复制',
+  'general.moreOptions': '更多选项',
+  'general.duplicate': '重复',
   'general.delete': '删除',
+
+  'general.copyToClipboard': '复制到剪贴板',
+  'general.copyToClipboard.svg': 'SVG',
+  'general.copyToClipboard.png': 'PNG',
+  'general.copyToClipboard.transparent': '透明背景',
+  'toast.copyToClipboard.svg': '已将所选项作为 SVG 复制到剪贴板',
+  'toast.copyToClipboard.png': '已将所选项作为 PNG 复制到剪贴板',
+  'toast.copyToClipboard.mode.transparent': '（透明背景）',
 
   // Language
   'language.switcher': 'Language',
@@ -76,7 +85,8 @@ const zhTranslations: Translations = {
   'language.vietnamese': 'Tiếng Việt',
   // Menu items
   'menu.open': '打开',
-  'menu.saveFile': '保存文件',
+  'menu.saveFile': '保存到当前文件',
+  'menu.saveAsFile': '另存为',
   'menu.exportImage': '导出图片',
   'menu.exportImage.svg': 'SVG',
   'menu.exportImage.png': 'PNG',
@@ -117,6 +127,7 @@ const zhTranslations: Translations = {
 
   // Tool popup items
   'popupToolbar.fillColor': '填充颜色',
+  'popupToolbar.fontSize': '字号',
   'popupToolbar.fontColor': '字体颜色',
   'popupToolbar.link': '链接',
   'popupToolbar.stroke': '边框',
@@ -147,23 +158,23 @@ const zhTranslations: Translations = {
 
   //markdown example
   'markdown.example': `# 我开始了
-  
+
   - 让我看看是谁搞出了这个 bug 🕵️ ♂️ 🔍
     - 😯 💣
       - 原来是我 👈 🎯 💘
-  
+
   - 竟然不可以运行，为什么呢 🚫 ⚙️ ❓
     - 竟然可以运行了，为什么呢？🎢 ✨
       - 🤯 ⚡ ➡️ 🎉
-  
+
   - 能运行起来的 🐞 🚀
     - 就不要去动它 🛑 ✋
       - 👾 💥 🏹 🎯
-      
+
   ## 男孩还是女孩 👶 ❓ 🤷 ♂️ ♀️
-  
+
   ### Hello world 👋 🌍 ✨ 💻
-  
+
   #### 哇 是个程序员 🤯 ⌨️ 💡 👩 💻`,
 
   'tutorial.title': 'Drawnix',
